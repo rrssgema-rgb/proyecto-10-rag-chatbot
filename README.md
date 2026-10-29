@@ -26,8 +26,6 @@ La carpeta `docs/` contiene los tres PDF indexados:
 
 Los documentos corresponden a ediciones concretas y son reales. 
 
-Los documentos de ejemplo de clase están en `docs_ejemplo_no_indexar/` y no forman parte del índice.
-
 ## Puesta en marcha
 
 ### 1. Requisitos
@@ -41,7 +39,7 @@ Los documentos de ejemplo de clase están en `docs_ejemplo_no_indexar/` y no for
 
 Copia `.env.example` como `.env` y configura `DATABASE_URL` con la cadena de conexión de tu propia base de datos.
 
-No publiques el archivo `.env`, ya que puede contener credenciales.
+No se publica el archivo `.env`, ya que contiene credenciales.
 
 ### 3. Preparar Ollama
 
@@ -96,7 +94,7 @@ Las rutas y los nombres de los scripts deben ejecutarse desde la carpeta raíz d
 
 | Etapa | Archivo | Función |
 |---|---|---|
-| Ingesta | `01_cargar_trocear.py`, `ingesta.py` | Extraer texto de los PDF y dividirlo en fragmentos. |
+| Ingesta | `ingesta.py` | Extraer texto de los PDF y dividirlo en fragmentos. |
 | Indexación | `02_indexar.py`, `db.py` | Generar embeddings y almacenar texto, documento, página y vector. |
 | Recuperación | `03_recuperar.py`, `rag.py` | Buscar fragmentos por similitud vectorial y coincidencias textuales. |
 | Generación | `04_generar.py`, `rag.py` | Enviar al modelo la pregunta y el contexto recuperado. |
@@ -157,17 +155,12 @@ Estas pruebas muestran el comportamiento esperado en los dos casos.
 ## Estructura del proyecto
 
 - `docs/`: documentos PDF que se indexan.
-- `docs_ejemplo_no_indexar/`: documentos de ejemplo excluidos del índice.
-- `extras/`: scripts auxiliares de la sesión.
-- `soluciones/`: ejemplos de referencia.
 - `db.py`: conexión a PostgreSQL y generación de embeddings.
 - `ingesta.py`: extracción y división del texto.
 - `rag.py`: recuperación y generación de respuestas.
 - `01_cargar_trocear.py` a `06_aislamiento_tenant.py`: scripts de procesamiento, consulta y configuración.
 - `requirements.txt`: dependencias del proyecto.
 - `.env.example`: plantilla de configuración sin credenciales.
-- `grafo_rag.png`: representación del grafo de LangGraph, si se ha generado.
-- `diagrama_pipeline_rag.png`: diagrama del pipeline, si está incluido.
 
 ## Seguridad y limitaciones
 
