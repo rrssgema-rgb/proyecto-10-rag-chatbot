@@ -1,0 +1,9 @@
+langchain-community
+langchain-core
+langchain-text-splitters
+langchain-ollama
+langgraph
+pypdf
+psycopg[binary]
+pgvector
+python-dotenv

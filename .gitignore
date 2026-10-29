@@ -1,0 +1,12 @@
+﻿.env
+.env.txt
+.venv/
+__pycache__/
+*.pyc
+soluciones/
+docs_ejemplo_no_indexar/
+PROMPTS.md
+ejercicio proyecto 10.docx
+pantallazos.docx
+01_cargar_trocear.py
+.vscode/
